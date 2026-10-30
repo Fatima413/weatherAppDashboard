@@ -1,0 +1,199 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #eef2f5;
+    color: #253442;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 90%;
+    max-width: 720px;
+    margin: 45px auto;
+}
+
+.page-header {
+    background-color: #243849;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 30px;
+    margin: 0 0 10px;
+}
+
+.page-header p {
+    color: #d5e0e8;
+    margin: 0;
+}
+
+.search-box, .weather-card {
+    background-color: white;
+    padding: 26px;
+    border-radius: 10px;
+    margin-top: 20px;
+    border: 1px solid #dce3e8;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 12px;
+}
+
+.search-row {
+    display: flex;
+    gap: 10px;
+}
+
+input {
+    flex: 1;
+    min-width: 0;
+    padding: 13px;
+    font-size: 16px;
+    border: 1px solid #bbc9d3;
+    border-radius: 6px;
+}
+
+button {
+    padding: 13px 24px;
+    font-size: 16px;
+    background-color: #276887;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1c5069;
+}
+
+button:disabled {
+    background-color: #91a8b6;
+}
+
+.status-message {
+    text-align: center;
+    margin: 20px 0;
+    color: #5b6b78;
+}
+
+.status-message.error {
+    color: #a02e2e;
+}
+
+.weather-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h2 {
+    font-size: 27px;
+    margin: 0;
+}
+
+.description {
+    color: #5b6b78;
+    text-transform: capitalize;
+}
+
+.temperature {
+    font-size: 56px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.small-text {
+    color: #5b6b78;
+    margin-top: 0;
+}
+
+.details {
+    display: flex;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.detail {
+    flex: 1;
+    background-color: #f0f4f6;
+    padding: 16px;
+    border-radius: 7px;
+}
+
+.detail p {
+    color: #5b6b78;
+    margin: 0 0 10px;
+}
+
+.detail strong {
+    font-size: 19px;
+}
+
+footer {
+    text-align: center;
+    color: #71818d;
+    font-size: 13px;
+    margin-top: 28px;
+}
+
+@media (max-width: 540px) {
+    .container {
+        width: 94%;
+        margin: 20px auto;
+    }
+
+    .page-header, .search-box, .weather-card {
+        padding: 20px;
+    }
+
+    .search-row, .details {
+        flex-direction: column;
+    }
+
+    .temperature {
+        font-size: 48px;
+    }
+}
+
+/* Added for React status components */
+.location-box {
+    margin-top: 18px;
+}
+.location-box select {
+    max-width: 100%;
+    padding: 11px;
+    border: 1px solid #bbc9d3;
+    border-radius: 6px;
+    font-size: 15px;
+    background: white;
+    color: #253442;
+}
+.status-message.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 3px solid #bbc9d3;
+    border-top-color: #276887;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .spinner { animation: none; }
+}
